@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BackgroudWrapper,
+  IdleStance,
+  PlayButton,
+  Score,
+  IdleStance2p,
+} from "./styles";
+import GameLogic from "./components/GameLogic";
+import idle from "./images/1p/stand.gif";
+import idle2p from "./images/2p/stand.gif";
+import BGM from "./music.mp3";
+import { Howl } from "howler";
+
+const player1 = [
+  {
+    image: idle,
+  },
+];
 
 function App() {
+  var sound = new Howl({
+    src: [BGM],
+    autoplay: true,
+    loop: true,
+    volume: 0.03,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BackgroudWrapper>
+      <header>
+        <PlayButton onClick={sound.play()}> </PlayButton>
+        <Score>Score</Score>
       </header>
-    </div>
+      <GameLogic />
+      <IdleStance src={idle} />
+      <IdleStance2p src={idle2p} />
+    </BackgroudWrapper>
   );
 }
 
