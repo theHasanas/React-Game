@@ -24,13 +24,6 @@ const IdleStance2p = styled.img`
   margin-left: 180px;
 `;
 
-const BackgroudWrapper = styled.div`
-  background-image: url(${level});
-  background-size: 100% 100%;
-  width: 100vw;
-  height: 100vh;
-`;
-
 const Score = styled.h2`
   display: flex;
   justify-content: center;
@@ -110,7 +103,6 @@ const Action3 = styled.button`
 `;
 
 export {
-  BackgroudWrapper,
   Score,
   ButtonWrapper,
   Action1,
